@@ -5,12 +5,17 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
-  build:
+ job1:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: scripts
+ build:
 
     runs-on: ubuntu-latest
 
