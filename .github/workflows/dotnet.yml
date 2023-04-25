@@ -10,11 +10,7 @@ on:
     branches: [ "master" ]
 
 jobs:
- job1:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: scripts
+ 
  build:
 
     runs-on: ubuntu-latest
@@ -25,6 +21,9 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
+    - name: Install dependencies
+      run: dotnet restore
+      working-directory: src/E-Learning-Platform
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
