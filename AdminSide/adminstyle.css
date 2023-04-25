@@ -1,0 +1,757 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+body {
+	background: #fff;
+	overflow-x: hidden;
+}
+
+#log {
+    position:relative;
+    width: 12%;
+    left: .5em;
+}
+
+.text {
+    position:relative;
+    left: 1em;
+}
+
+/* SIDEBAR */
+#sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 280px;
+	height: 100%;
+	background: #0C0C1E;
+	z-index: 2000;
+	font-family:  'Lato', sans-serif;
+	transition: .3s ease;
+	overflow-x: hidden;
+	scrollbar-width: none;
+}
+#sidebar::--webkit-scrollbar {
+	display: none;
+}
+#sidebar.hide {
+	width: 60px;
+}
+#sidebar .brand {
+	font-size: 24px;
+	font-weight: 700;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	color: #3C91E6;
+	position: sticky;
+	top: 0;
+	left: 0;
+	background: #0C0C1E;
+	z-index: 500;
+	padding-bottom: 20px;
+	box-sizing: content-box;
+}
+#sidebar .brand .bx {
+	min-width: 60px;
+	display: flex;
+	justify-content: center;
+}
+#sidebar .side-menu {
+	width: 100%;
+	margin-top: 48px;
+}
+#sidebar .side-menu li {
+	height: 48px;
+	background: transparent;
+	margin-left: 6px;
+	border-radius: 48px 0 0 48px;
+	padding: 4px;
+}
+#sidebar .side-menu li.active {
+	background: #fff;
+	position: relative;
+}
+#sidebar .side-menu li.active::before {
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	top: -40px;
+	right: 0;
+	box-shadow: 20px 20px 0 #fff;
+	z-index: -1;
+}
+#sidebar .side-menu li.active::after {
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	bottom: -40px;
+	right: 0;
+	box-shadow: 20px -20px 0 #fff;
+	z-index: -1;
+}
+#sidebar .side-menu li a {
+	width: 100%;
+	height: 100%;
+	background: #0C0C1E;
+	display: flex;
+	align-items: center;
+	border-radius: 48px;
+	font-size: 16px;
+	color: #FBFBFB;
+	white-space: nowrap;
+	overflow-x: hidden;
+}
+#sidebar .side-menu.top li.active a {
+	color: #3C91E6;
+}
+#sidebar.hide .side-menu li a {
+	width: calc(48px - (4px * 2));
+	transition: width .3s ease;
+}
+#sidebar .side-menu li a.logout {
+	color: #DB504A;
+}
+#sidebar .side-menu.top li a:hover {
+	color: #3C91E6;
+}
+#sidebar .side-menu li a .bx {
+	min-width: calc(60px  - ((4px + 6px) * 2));
+	display: flex;
+	justify-content: center;
+}
+/* SIDEBAR */
+
+#box {
+    position:relative;
+    font-size: 24px;
+    flex-item-align:center;
+    width: 100px;
+    /*border: 1px solid #fff;*/
+    top: 0em;
+    left: 47.5%;
+    width: 25%;
+    padding: 5em;
+    padding-top: 80px;
+    /*background-color: gray;*/
+}
+
+.btnviewid {
+    position:relative;
+    top: 2em;
+    padding: .5em;
+    padding-right: 2em;
+    padding-left: 2em;
+    background: transparent;
+    color: #fff;
+    left: 2.8em;
+}
+
+#usercount {
+    position:absolute;
+    border: 1px solid #dfe0e2 !important;
+    /*background-image: url("http://localhost:5031/FinalProject/img/Admin img/codioful-formerly-gradienta-C0EW4NoDg_E-unsplash.jpg");*/
+    top: 11.9%;
+    left: 23%;
+    width: 13%;
+    height: 90px;
+    border: 0;
+    border-radius: 14px;
+}
+
+    #usercount input[type="submit"] {
+        position: relative;
+        top: 0.2em;
+        left: .8em;
+        font-size: 29.3px;
+        border: 0px;
+        width: 187px;
+        position: relative;
+        padding: .5em;
+        padding-right: 2em;
+        padding-left: 2em;
+        background: transparent;
+        color: #111;
+    }
+
+.name {
+    position:absolute;
+    color: #0C0C1E;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    top:-10em;
+}
+
+#bguser {
+    position: absolute;
+     width: 23%;
+     top: 1.2em;
+     left: 1.5em;
+     opacity: 0.4;
+}
+
+#userlist {
+    position:absolute;
+    border: 1px solid #dfe0e2 !important;
+    /*background-image: url("http://localhost:5031/FinalProject/img/Admin img/luke-chesser-3rWagdKBF7U-unsplash.jpg");
+    background-size:cover;*/
+    top: 12%;
+    left: 38%;
+    width: 13%;
+    height: 90px;
+    border: 0;
+    border-radius: 14px;
+    padding: 1em;
+}
+
+.name2 {
+    position:relative;
+    color: #111;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    top:-.4em;
+    z-index: 9999;
+}
+
+.btnuserr {
+    position:relative;
+    background: transparent;
+    color: #0C0C1E;
+    font-weight: 600;
+    padding: 15px;
+    width: 193px;
+    height: 100px;
+    top: -.6em;
+    left: -.5em;
+    border: 0;
+    font-size: 27px;
+    text-align:left;
+}
+
+.number2 {
+    position:relative;
+    color: #0C0C1E;
+    font-size: 28px;
+    top:-4.8em;
+    font-weight: 400;
+    /*left: 4.4em;*/
+    font-family: 'Poppins', sans-serif;
+}
+
+#bguser2 {
+    position: relative;
+     width: 30%;
+     opacity: .3;
+     top: -3em;
+     left: 4.3em;
+     z-index: 1;
+}
+
+#teachers {
+    position:absolute;    
+    border: 1px solid #dfe0e2 !important;
+    /*background-image: url("http://localhost:5031/FinalProject/img/Admin img/ashley-whitlatch-36aGnv29Ss0-unsplash.jpg");
+    background-size:cover;*/
+    top: 12%;
+    left: 53%;
+    width: 13%;
+    height: 90px;
+    border: 0;
+    border-radius: 14px;
+    padding: 1em;
+}
+
+.name3 {
+    position:relative;
+    color: #111;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 26px;
+    top:-.2em;
+}
+
+.btnteacherr {
+    position:relative;
+    background: transparent;
+    color: #0C0C1E;
+    font-weight: 600;
+    padding: 15px;
+    width: 193px;
+    height: 97px;
+    top: -.8em;
+    left: -.5em;
+    border: 0;
+    font-size: 27px;
+    text-align:left;
+    z-index: 9999;
+}
+
+.number3 {
+    position:relative;
+    color: #0C0C1E;
+    font-size: 28px;
+    top: -4.9em;
+    font-weight: 400;
+    /*left: 4.4em;*/
+    font-family: 'Poppins', sans-serif;
+}
+
+#bguser3 {
+    position: relative;
+     width: 35%;
+     transform: rotate(20deg);
+     top: -3.4em;
+     left: 4.4em;
+     opacity: .3;
+}
+
+#courses {
+    position:absolute;
+    border: 1px solid #dfe0e2 !important;
+    /*background-image: url("http://localhost:5031/FinalProject/img/Admin img/luke-chesser-pJadQetzTkI-unsplash.jpg");
+    background-size:cover;*/
+    top: 12%;
+    left: 68%;
+    width: 13%;
+    height: 90px;
+    border: 0;
+    border-radius: 14px;
+    padding: 1em;
+}
+
+.name4 {
+    position:relative;
+    color: #0C0C1E;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    top:-.1em;
+}
+
+.number4 {
+    position:relative;
+    color: #0C0C1E;
+    font-size: 28px;
+    top:-2.7em;
+    font-weight: 400;
+    /*left: 4.4em;*/
+    font-family: 'Poppins', sans-serif;
+}
+
+.userview {
+    position:absolute;
+    left: -16em;
+    top: -1em;
+    border-radius: 4px;
+    font-size: 24px;
+}
+
+.userview td   /* this applies to the Gridviews Data fileds */
+{
+    position:relative;
+    left: 0;
+    padding: 10px;
+    border: solid 0.1px black;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+.userview th   /* this applies to the Gridviews Headers */
+{
+     padding: 10px 15px;
+     border-width: 1px;
+}
+
+#userview {
+    position:absolute;
+    left: 38em;
+    top: 3px;
+    border-radius: 4px;
+}
+
+#bguser4 {
+    position: relative;
+    width: 30%;
+    transform: rotate(20deg);
+    top: -1.2em;
+    left: 4.2em;
+    opacity: .5;
+}
+
+#notices {
+    position:absolute;
+    border: 1px solid #dfe0e2 !important;
+    /*background-image: url("http://localhost:5031/FinalProject/img/Admin img/luke-chesser-eICUFSeirc0-unsplash.jpg");
+    background-size:cover;*/
+    top: 12%;
+    left: 83%;
+    width: 13%;
+    height: 90px;
+    border: 0;
+    border-radius: 14px;
+    padding: 1em;
+}
+
+.name5 {
+    position:relative;
+    color: #0C0C1E;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    top:-.4em;
+}
+
+.number5 {
+    position:relative;
+    color: #0C0C1E;
+    font-size: 28px;
+    top:-0.8em;
+    font-weight: 400;
+    /*left: 4.4em;*/
+    font-family: 'Poppins', sans-serif;
+}
+
+#bguser5 {
+    position: relative;
+     width: 25%;
+     top: 0.8em;
+     left: .3em;
+     opacity: .5;
+}
+
+#staffbox {
+    border-style: solid;
+    border-color: #dfe0e2;
+    border-width: 1px;
+    position:absolute;
+    background-color: #fff;
+    opacity: .9;
+    width: 72.9%;
+    height: 70%;
+    top: 12.5em;
+    left: 22.2em;
+    padding: 15px;
+    border-radius: 14px;
+}
+
+/*Teacher Dashboard box*/
+#teacherbox {
+    border-style: solid;
+    border-color: inherit;
+    border-width: 1px;
+    position:relative;
+    background-color: #fff;
+    opacity: .9;
+    width: 75%;
+    height: 70%;
+    top: 3em;
+    left: 22.2em;
+    padding: 15px;
+    border-radius: 14px;
+}
+
+#facultybox {
+    border-style: solid;
+    border-color: inherit;
+    border-width: 1px;
+    position:absolute;
+    background-color: #fff;
+    opacity: .9;
+    width: 72.9%;
+    height: auto;
+    top: 5em;
+    left: 22.2em;
+    padding: 15px;
+    border-radius: 14px;
+}
+
+#details {
+    position:relative;
+    top: 0;
+}
+
+#head {
+    position:relative;
+    font-size: 21px;
+    /*text-align:center;*/
+    font-weight: 600;
+}
+
+#t1 {
+    position:relative;
+    top: 1.3em;
+    font-size: 22px;
+}
+
+#tname {
+    position:absolute;
+    top: -1em;
+    left: 3em;
+    font-size: 14px;
+}
+
+    #tname span {
+        opacity: .6;
+    }
+
+#imgs {        
+    position:absolute;
+    width:30%;
+    top: -0em;
+    left: -3em;
+}
+
+#details input[type="submit"] {
+    background-color: transparent;
+    border: 0px;
+    text-decoration: underline;
+}
+
+#t2 {
+    position:relative;
+    top: 3.3em;
+    font-size: 22px;
+}
+
+#tname2 {
+    position:absolute;
+    top: -1em;
+    left: 3em;
+    font-size: 14px;
+}
+
+    #tname2 span {
+        opacity: .6;
+    }
+
+#imgs2 {        
+    position:absolute;
+    width:30%;
+    top: -0em;
+    left: -3em;
+}
+
+#details input[type="submit"] {
+    background-color: transparent;
+    border: 0px;
+    text-decoration: underline;
+}
+
+#t3 {
+    position:relative;
+    top: 5.5em;
+    font-size: 22px;
+}
+
+#tname3 {
+    position:absolute;
+    top: -1em;
+    left: 3em;
+    font-size: 14px;
+}
+
+    #tname3 span {
+        opacity: .6;
+    }
+
+#imgs3 {        
+    position:absolute;
+    width:30%;
+    top: -0em;
+    left: -3em;
+}
+
+#details input[type="submit"] {
+    background-color: transparent;
+    border: 0px;
+    text-decoration: underline;
+}
+
+#t4 {
+    position:relative;
+    top: 7.5em;
+    font-size: 22px;
+}
+
+#tname4 {
+    position:absolute;
+    top: -1em;
+    left: 3em;
+    font-size: 14px;
+}
+
+    #tname4 span {
+        opacity: .6;
+    }
+
+#imgs4 {        
+    position:absolute;
+    width:30%;
+    top: -0em;
+    left: -3em;
+}
+
+#details input[type="submit"] {
+    background-color: transparent;
+    border: 0px;
+    text-decoration: underline;
+}
+
+/*teacher*/
+.teach-head {
+    position:absolute;
+    top: 1em;
+    left: 12.1em;
+}
+
+    .teach-head span {
+        color: #dfe0e2;
+        font-size: 20px;
+    }
+
+    .teach-head span2 {
+        position:absolute;
+        font-size: 16px;
+        top: 2.7em;
+        left: 63.2em;
+        width: 100%;
+        color: #dfe0e2
+    }
+
+#tbox {
+    position:absolute;
+    top: 15%;
+    left: 19%;
+    width: 80.2%;
+    height: 80%;
+    font-size: 20px;
+    padding: 55px;
+    /*box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;*/
+    border: 1px solid rgba(10, 37, 64, 0.35);
+    border-radius: 4px;
+}
+
+#tbox table td {
+    color: #111;
+}
+
+table input[type="text"] {
+    color: red;
+    padding: 5px;
+    font-size: 13px;
+    /*background-color: lightgray;*/
+    border: 1px solid #dfe0e2;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+
+#tbox table input[type="submit"] {
+    background: transparent;
+    color: #111;
+    font-size: 16px;
+    padding: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: all 0.1s ease-in-out;
+}
+
+    #tbox table input[type="submit"]:hover {
+        background-color: #0C0C1E;
+        color: #fff;
+    }
+
+#tview {
+    position:absolute;
+    top: 3em;
+    left: 19em;
+}
+
+    #tview th {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    #tview td {
+        padding: 15px;
+    }
+
+#tview-add {
+    position:absolute;
+    top: 47em;
+    left: 18em;
+}
+
+    #tview-add th {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    #tview-add td {
+        padding: 15px;
+    }
+
+/*upload images/ videos*/
+#upload {
+    position:absolute;
+    top: 1.7%;
+    left: 19%;
+    width: 85%;
+    color:#111;
+    padding: 45px;
+    /*box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;*/
+    border: 1px solid rgba(50, 50, 93, 0.25);
+}
+
+#dlist {
+    position:absolute;
+    top: 20em;
+    left: 20%;
+    background-color:#FAFAFA;
+}
+
+#upload input[type="submit"] {
+    background: transparent;
+    color: #111;
+    padding: 7px;
+    position:relative;
+    top: 1em;
+    transition: all 0.1s ease-in-out;
+    left: 0px;
+}
+
+    #upload input[type="submit"]:hover {
+        background-color: #0C0C1E;
+        color: #fff;
+    }
+
+.Noticelink {
+    position:relative;
+    top: 1.5em;
+    left: 0%;
+    z-index: 9999;
+}

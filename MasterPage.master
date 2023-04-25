@@ -1,0 +1,243 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Learnerz</title>
+    <link rel="icon" type="image/x-icon" href="img/logo/algo.png">
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <script src="JavaScript.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <script type="text/javascript">
+        $(function () {
+            $('.count').each(function () {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 9999,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        #log {
+            position:relative;
+            width: 58%;
+            top: -.8em;
+            left: 0em;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 1.3em;
+            left: -3em;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            min-width: 260px;
+            max-height: 217px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .desc {
+            padding: 15px;
+            text-align: center;
+        }
+        #lbluserlog {
+            position:relative;
+            background: transparent;
+            border: 0px;
+            padding: 10px;
+            border-radius: 4px;
+            width:100%;
+            top: 8px;
+            text-align:center;
+        }
+        #btnout {
+            position:relative;
+            padding: 10px;
+            border: 0px;
+            border-radius: 4px;
+            background: transparent;
+            width:100%;
+            top: -3em;
+            text-align:center;
+            text-decoration:underline;
+            transition: all .3s ease-in-out;
+        }
+        #btnadmin {
+            position:relative;
+            background: rgba(0,0,0,0.2);
+            padding: 10px;
+            border: 0px;
+            border-radius: 4px;
+            width:100%;
+            top: 0;
+            text-align:center;
+            transition: all .5s ease-in-out;
+        }
+        #btnfaculty {
+            position:relative;
+            padding: 10px;
+            border: 1px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            width:100%;
+            top: -15px;
+            text-align:center;
+            transition: all .5s ease-in-out;
+        }
+        #btnfaculty:hover {
+            transform: scale(.9);
+        }
+        #btnout:hover {
+            transform: scale(.9);
+        }
+        #btnadmin:hover {
+            transform: scale(.9);
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+            <div id="content">
+                <a href="Home.aspx"><img src="img/logo/logo.png" id="logo" /></a>
+                <nav>
+                    <ul>
+                        <li><a href="Home.aspx"> Home       </a></li>
+                        <li><a href="lessions.aspx"> Lessons    </a></li>
+                        <li><a href="About.aspx"> About      </a></li>
+                        <li><a href="Message.aspx"> Contact    </a></li>
+                        <li><a href="QuizTest.aspx"> Quiz    </a></li>
+
+                        <div class="dropdown">
+                            <a href="UserProfile.aspx">
+                                <img src="img/log%20icon/user.png" id="log" />
+                                <%--<asp:Image ID="ProfilePictureImage" runat="server" CssClass="profile-picture" Width="100%" />--%>
+                            </a>
+                            <div class="dropdown-content">
+                                <div class="desc">
+                                    <asp:Label ID="lbluserlog" runat="server" Text=""></asp:Label>
+                                </div>
+
+                                <div class="desc">
+                                    <asp:Button ID="btnadmin" runat="server" Text="Admin" OnClick="btnadmin_OnClick" />
+                                </div>
+                                <div class="desc">
+                                    <asp:Button ID="btnfaculty" runat="server" Text="Faculty" OnClick="btnfaculty_OnClick" />
+                                </div>
+                                <div class="desc">
+                                    <asp:Button ID="btnout" runat="server" Text="Log Out" OnClick="btnout_OnClick" />
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#start" id="btn"> Get Started </a>
+                        <a href="Notice.aspx">
+                            <img src="img/logo/Social%20logo/notification%20(1).png" id="bell" /></a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+            <div id="start">
+                <h1 id="start-title">Start Learning Today!</h1>
+                <p id="start-about">tomorrow is never promised and the knowledge you gain today can shape your future.</p>
+                <a href="#" id="btn-end">Start Learning Now</a>
+            </div>
+
+            <div id="footer">
+                <div id="left-logo">
+                    <img src="img/logo/algo-white.png" id="algo" />
+                    <p id="rights">Copyright © 2023 Learnerz
+                        <br /> Powered by Learnerz</p>
+                </div>
+                <div id="learn">
+                    <ul>
+                        <h4>Learn</h4>
+                        <br />
+                        <li><a href="#"> Introduction      </a></li>
+                        <li><a href="#"> Working with data </a></li>
+                        <li><a href="#"> Validating        </a></li>
+                        <li><a href="#"> Testing           </a></li>
+                    </ul>
+                </div>
+                <div id="aboutus">
+                    <ul>
+                        <h4>About</h4>
+                        <br />
+                        <li><a href="#"> About me     </a></li>
+                        <li><a href="#"> Certificate  </a></li>
+                        <li><a href="#"> Testimonials </a></li>
+                        <li><a href="#"> Get in touch </a></li>
+                    </ul>
+                </div>
+                <div id="subscribe">
+                    <div id="label">
+                    <asp:Label ID="name" runat="server" Text="Newsletter"></asp:Label>
+                    <br />
+                    <input id="txtemail" type="email" placeholder="Email address" />
+                        <br />
+                        <%--<asp:Button ID="btnsubs" runat="server" Text="Subscribe"/>--%>
+                        <a href="#myModal" id="btnsubs" class="trigger-btn" data-toggle="modal">Subscribe</a>
+                    </div>
+
+                    <!-- Modal HTML -->
+                    <div id="myModal" class="modal fade">
+                        <div class="modal-dialog modal-confirm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="icon-box">
+                                        <img src="img/logo/thumbs-up.png" id="done" />
+                                    </div>				
+                                    <h4 class="modal-title w-100">Awesome!</h4>	
+                                </div>
+                                <div class="modal-body">
+                                    <p class="text-center">Thank you!
+                                        <br /><br /> Thanks for Subscribing Us. Welcome to our community. We are happy to have you on board.
+                                        <br /><br /> Why don’t you follow us on [ social media ] as well?
+                                        <br />- [ Learnerz ]
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>     
+            <hr id="footer-line"/>
+            <div id="bottom">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <div id="social">
+                    <img src="img/logo/Social%20logo/facebook.png" id="fb" />
+                    <img src="img/logo/Social%20logo/instagram.png" id="insta" />
+                    <img src="img/logo/Social%20logo/linkden.png" id="link" />
+                    <img src="img/logo/Social%20logo/twitter.png" id="twit" />
+                </div>
+            </div>
+        </div>
+    </div>
+  </form>
+</body>
+</html>
